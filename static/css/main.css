@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+body,
+html {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+
+    /* background-color: lightblue; */
+}
+
+h1 {
+    color: blue
+}
+
+.content {
+    margin: 3vh auto;
+    width: 400px;
+}
+
+a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+
+/* table, */
+td,
+th {
+    border: 1px solid #aaa;
+    padding: 0px 20px;
+
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: left;
+    padding: 5px;
+    white-space: nowrap;
+    /* Add this line */
+    overflow: hidden;
+    /* Add this line */
+    text-overflow: ellipsis;
+    /* Add this line */
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Added to align items vertically */
+
+}
+
+#content {
+    width: 65%;
+    /* display: inline-flex;
+    justify-content: center; */
+}
+
+/* div .input {
+    display: inline;
+    justify-content: center;
+} */

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<br>
+<br>
+<div class="content container-md">
+
+    <h1 style="text-align: center" class="h1 fw-bold text-success">Puppy Feeder Tracker</h1>
+    <br>
+    {% if feeds|length < 1 %} <h4 style="text-align: center">There are no records. Enter one below!</h4>
+        {% else %}
+        <table class="table table-success table-striped-columns table table-bordered border-success table-hover">
+            <tr>
+                <th class="table-light">Feed Entry</th>
+                <th class="table-light">Date & Time</th>
+                <!-- <th>Food</th> -->
+                <th class="table-light">Actions</th>
+            </tr>
+            {% for feed in feeds%}
+            <tr>
+                <td class="h5">{{ feed.content }}</td>
+                <td class="h6 text-success fw-bold">{{ feed.date_created.strftime('%Y-%m-%d %H:%M') }}</td>
+                <!-- <td>{{ feed.completed }}</td> -->
+                <!-- <td>{{ feed.completed }}</td> -->
+
+                <td>
+                    <a class="text-light btn btn-primary text-underline-none" href="/delete/{{feed.id}}">Delete</a>
+                    <a class="text-light btn btn-success text-underline-none" href="/update/{{feed.id}}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <br>
+        <div class="input">
+            <form action="/" method="POST" class="input-group mb-3">
+                <input class="form-control" type="text" name="content" id="content"
+                    placeholder="Enter feed info here...">
+                <input class="btn btn-primary fw-bold" type="submit" value="Add Feed Record">
+            </form>
+        </div>
+
+</div>
+{% endblock %}
